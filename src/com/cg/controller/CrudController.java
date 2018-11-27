@@ -178,16 +178,32 @@ public class CrudController implements ActionListener{
 			}
 		case "Back":
 			if(e.getSource()==jf2) {
-			jf2.setVisible(false);
+			jf2.dispose();
 			}
 			else if(e.getSource()==jf3) {
-				jf3.setVisible(false);
+				jf3.dispose();
+			}
+			else if(e.getSource()==jf4) {
+				jf4.dispose();
+			}
+			else if(e.getSource()==frame1) {
+				frame1.dispose();
 			}
 			ch=new CrudHome();
 			break;
 		case "Exit":
-			jf2.setVisible(false);
-			jf2.dispose();
+			if(e.getSource()==jf2) {
+				jf2.dispose();
+				}
+				else if(e.getSource()==jf3) {
+					jf3.dispose();
+				}
+				else if(e.getSource()==jf4) {
+					jf4.dispose();
+				}
+				else if(e.getSource()==frame1) {
+					frame1.dispose();
+				}
 			break;
 		case "Search":
 			cb=new CrudBean();
@@ -222,6 +238,8 @@ public class CrudController implements ActionListener{
 		cd1=new CrudDaoImpl();
 		String[] columnNames = {"Name", "Email", "Mobile No"};
 		empList = cd1.getAllEmployee();
+		backBtn = new JButton("Back");
+        exitBtn = new JButton("Exit");
 		frame1 = new JFrame("Employees list");
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame1.setLayout(new BorderLayout());
@@ -257,12 +275,12 @@ public class CrudController implements ActionListener{
 	}
 
 	public void deleteEmployee() {
-		jf3=new JFrame();
-		jf3.setTitle("Delete Employee");
-		jf3.setVisible(true);
-		jf3.setSize(500, 500);
-		jf3.setLayout(new GridLayout(5,1));
-		jf3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf4=new JFrame();
+		jf4.setTitle("Delete Employee");
+		jf4.setVisible(true);
+		jf4.setSize(500, 500);
+		jf4.setLayout(new GridLayout(5,1));
+		jf4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		l1 = new JLabel("Employee Maintenance System",SwingConstants.CENTER);
         l1.setForeground(Color.blue);
         l1.setFont(new Font("Serif", Font.BOLD, 20));
@@ -274,15 +292,15 @@ public class CrudController implements ActionListener{
         backBtn = new JButton("Back");
         exitBtn = new JButton("Exit");
 
-        jf3.add(l1);
+        jf4.add(l1);
 
         jp.add(l9);
         jp.add(tf7);
 
-        jf3.add(jp);
-        jf3.add(delBtn);
-        jf3.add(backBtn);
-        jf3.add(exitBtn);
+        jf4.add(jp);
+        jf4.add(delBtn);
+        jf4.add(backBtn);
+        jf4.add(exitBtn);
         delBtn.addActionListener(this);
         backBtn.addActionListener(this);
         exitBtn.addActionListener(this);

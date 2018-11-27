@@ -56,19 +56,19 @@ public class CrudHome extends JFrame implements ActionListener{
 		cc1=new CrudController();
 		switch (e.getActionCommand()) {
 		case "Add Employee":
-			jf1.setVisible(false);
+			jf1.dispose();
 			cc1.addEmployee();
 			break;
 		case "Update Employee":
-			jf1.setVisible(false);
+			jf1.dispose();
 			cc1.updateEmployee();
 			break;
 		case "Get All Employees":
-			jf1.setVisible(false);
+			jf1.dispose();
 			cc1.getAllEmployee();
 			break;
 		case "Delete Employee":
-			jf1.setVisible(false);
+			jf1.dispose();
 			cc1.deleteEmployee();
 			break;
 			default:
